@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        _ = Firebase(url: "a")
         // Insert code here to initialize your application
     }
 
