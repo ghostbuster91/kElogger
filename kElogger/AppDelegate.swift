@@ -32,9 +32,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                         // There was an error during log in
                                     } else {
                                         self.window.close()
-                                        // We have a logged in Github user
+                                        let username = authData.providerData["username"]
+                                        let userStorage = ref.childByAppendingPath("users").childByAppendingPath(authData.uid)
+                                        self.onLoginSucced(userStorage, username: username as! String)
                                     }
         })
+    }
+    
+    private func onLoginSucced(firebase: Firebase, username: String){
+        let gracehop = ["full_name": username, "date_of_birth": "December 9, 1906"]
+        firebase.setValue(gracehop)
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
