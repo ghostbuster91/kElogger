@@ -3,9 +3,9 @@ import AppKit
 
 class KeyListener {
     
-    var firebase: Firebase
-    var keystrokes : Int
-    var mouseEvents : Int
+    private var firebase: Firebase
+    private var keystrokes : Int
+    private var mouseEvents : Int
     
     init(firebase: Firebase, keystrokes: Int, mouseEvents: Int){
         self.firebase = firebase
@@ -14,22 +14,25 @@ class KeyListener {
     }
     
     func start(){
-        acquirePrivileges()
-        
+        if(acquirePrivileges()){
+            registerKeyboardListener()
+            registerMouseClickedListener()
+            scheduleDataUploads()
+        }
+    }
+    
+    private func registerKeyboardListener(){
         NSEvent.addGlobalMonitorForEventsMatchingMask(
             .KeyDownMask, handler: {(event: NSEvent) in
-                print(String(event.characters!))
                 self.keystrokes += 1
-//                 notifier.showNotification(String(event.characters!))
         })
+    }
+    
+    private func registerMouseClickedListener(){
         NSEvent.addGlobalMonitorForEventsMatchingMask(
             [.LeftMouseDownMask, .RightMouseDownMask], handler: {(event: NSEvent) in
-//                notifier.showNotification("mysz")
-                print("mysz")
                 self.mouseEvents += 1
         })
-        
-        createTimer()
     }
     
     private func acquirePrivileges() -> Bool {
@@ -42,7 +45,7 @@ class KeyListener {
         return accessEnabled == true;
     }
     
-    private func createTimer() -> NSTimer {
+    private func scheduleDataUploads() -> NSTimer {
         return NSTimer.scheduledTimerWithTimeInterval(20.0,
                                                       target:   self,
                                                       selector: #selector(uploadData),

@@ -41,11 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             var mouseEvents = 0
             if shouldCreateUser {
                 print("creating user...")
-                let userData = ["full_name": githubUsername, "keystrokes": "0", "mouse" : "0"]
+                let userData = ["full_name": githubUsername, "keystrokes": 0, "mouse" : 0]
                 firebase.setValue(userData)
             }else{
-                keystrokes = Int(snapshot.value.objectForKey("keystrokes") as! String)!
-                mouseEvents = Int(snapshot.value.objectForKey("mouse") as! String)!
+                keystrokes = snapshot.value.objectForKey("keystrokes") as! Int!
+                mouseEvents = snapshot.value.objectForKey("mouse") as! Int!
             }
             KeyListener(firebase: firebase, keystrokes: keystrokes, mouseEvents: mouseEvents).start()
         })
