@@ -7,8 +7,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     
     private var backendRef:Firebase?
-    private var keystrokes: Int = 0
-    private var mouseEvents: Int = 0
 
     @IBAction func helpAction(sender: AnyObject) {
         let urlString = NSURL(string: "https://github.com/settings/tokens")
@@ -38,22 +36,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func onLoginSucced(firebase: Firebase, githubUsername: String){
         firebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            let usernameFromApi = snapshot.value.objectForKey("full_name") as? String
-            if usernameFromApi == nil {
-                print("username is nil")
+            let shouldCreateUser = (snapshot.value.objectForKey("full_name") as? String) == nil
+            var keystrokes = 0
+            var mouseEvents = 0
+            if shouldCreateUser {
+                print("creating user...")
                 let userData = ["full_name": githubUsername, "keystrokes": "0", "mouse" : "0"]
                 firebase.setValue(userData)
             }else{
-                self.keystrokes = Int(snapshot.value.objectForKey("keystrokes") as! String)!
-                self.mouseEvents = Int(snapshot.value.objectForKey("mouse") as! String)!
+                keystrokes = Int(snapshot.value.objectForKey("keystrokes") as! String)!
+                mouseEvents = Int(snapshot.value.objectForKey("mouse") as! String)!
             }
-            self.backendRef = firebase
-            self.initListeners()
+            KeyListener(firebase: firebase, keystrokes: keystrokes, mouseEvents: mouseEvents).start()
         })
-    }
-    
-    private func initListeners(){
-        KeyListener().start()
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
