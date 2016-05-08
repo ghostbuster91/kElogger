@@ -12,6 +12,7 @@
 		E6AC3DDD1CDF7BC70084E6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */; };
 		E6AC3DE01CDF7BC70084E6DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AC3DDE1CDF7BC70084E6DF /* MainMenu.xib */; };
 		E6AC3DEB1CDF7BC70084E6DF /* kEloggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3DEA1CDF7BC70084E6DF /* kEloggerTests.swift */; };
+		E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3E0C1CDFB6980084E6DF /* KeyListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		E6AC3DEA1CDF7BC70084E6DF /* kEloggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kEloggerTests.swift; sourceTree = "<group>"; };
 		E6AC3DEC1CDF7BC70084E6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6AC3DFB1CDF92290084E6DF /* kElogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kElogger-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6AC3E0C1CDFB6980084E6DF /* KeyListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyListener.swift; sourceTree = "<group>"; };
 		E9802986C3E0F0200A1CA97B /* Pods-kElogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kElogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-kElogger/Pods-kElogger.release.xcconfig"; sourceTree = "<group>"; };
 		F289E9B3EA8F60854DB3041F /* Pods_kElogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kElogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE99D3BDAA5897E150786A6 /* Pods-kElogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kElogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kElogger/Pods-kElogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		E6AC3DD91CDF7BC70084E6DF /* kElogger */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC3E0C1CDFB6980084E6DF /* KeyListener.swift */,
 				E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */,
 				E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */,
 				E6AC3DDE1CDF7BC70084E6DF /* MainMenu.xib */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */,
+				E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
