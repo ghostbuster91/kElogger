@@ -9,6 +9,11 @@ class KeyListener {
     private var mouseMoves : Int
     private var mouseMoovedDistance : Double
     
+    private var keyboardMonitor : AnyObject?
+    private var mouseMonitor: AnyObject?
+    private var mouseMoveMonitor: AnyObject?
+    private var timer: NSTimer?
+    
     init(firebase: Firebase, keystrokes: Int, mouseClicks : Int,mouseMooved : Int, mouseMoovedDistance : Double){
         self.firebase = firebase
         self.keystrokes = keystrokes
@@ -17,34 +22,41 @@ class KeyListener {
         self.mouseMoovedDistance = mouseMoovedDistance
     }
     
+    deinit{
+        if (keyboardMonitor != nil) { NSEvent.removeMonitor(keyboardMonitor!)}
+        if (mouseMonitor != nil) { NSEvent.removeMonitor(mouseMonitor!) }
+        if (mouseMoveMonitor != nil ) { NSEvent.removeMonitor(mouseMoveMonitor!) }
+        if (timer != nil) {timer!.invalidate()}
+    }
+    
     func start(){
         if(acquirePrivileges()){
             registerKeyboardListener()
             registerMouseClickedListener()
             registerMouseMovedListner()
-            scheduleDataUploads()
+            timer = scheduleDataUploads()
         }
     }
     
     private func registerKeyboardListener(){
-        NSEvent.addGlobalMonitorForEventsMatchingMask(
-            .KeyDownMask, handler: {(event: NSEvent) in
-                self.keystrokes += 1
+        keyboardMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(
+            .KeyDownMask, handler: { [weak self] (event: NSEvent) in
+                self?.keystrokes += 1
         })
     }
     
     private func registerMouseClickedListener(){
-        NSEvent.addGlobalMonitorForEventsMatchingMask(
-            [.LeftMouseDownMask, .RightMouseDownMask, .OtherMouseDownMask], handler: {(event: NSEvent) in
-                self.mouseClicks += 1
+        mouseMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(
+            [.LeftMouseDownMask, .RightMouseDownMask, .OtherMouseDownMask], handler: { [weak self] (event: NSEvent) in
+                self?.mouseClicks += 1
         })
     }
     
     private func registerMouseMovedListner(){
-        NSEvent.addGlobalMonitorForEventsMatchingMask(
-            [.MouseMovedMask], handler: {(event: NSEvent) in
-                self.mouseMoves += 1
-                self.mouseMoovedDistance += Double(sqrt(pow(Double(event.deltaX), 2) + pow(Double(event.deltaY),2)))
+        mouseMoveMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(
+            [.MouseMovedMask], handler: {[weak self] (event: NSEvent) in
+                self?.mouseMoves += 1
+                self?.mouseMoovedDistance += Double(sqrt(pow(Double(event.deltaX), 2) + pow(Double(event.deltaY),2)))
         })
     }
     
@@ -59,8 +71,9 @@ class KeyListener {
     }
     
     private func scheduleDataUploads() -> NSTimer {
+        weak var welf = self
         return NSTimer.scheduledTimerWithTimeInterval(20.0,
-                                                      target:   self,
+                                                      target:   welf!,
                                                       selector: #selector(uploadData),
                                                       userInfo: nil,
                                                       repeats:  true)

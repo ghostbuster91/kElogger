@@ -4,6 +4,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     private let baseBackend = Firebase(url: "https://luminous-heat-7872.firebaseio.com")
+    private var keyListener : KeyListener?
     
     @IBOutlet weak var githubTokenInput: NSTextField!
     @IBOutlet weak var window: NSWindow!
@@ -84,7 +85,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 mouseMoves = snapshot.value.objectForKey("mouseMoves") as! Int!
                 mouseMovesDistance = snapshot.value.objectForKey("mouseMovesDistance") as! Double!
             }
-            KeyListener(firebase: userBackend, keystrokes: keystrokes,mouseClicks: mouseClicks, mouseMooved:mouseMoves,mouseMoovedDistance: mouseMovesDistance).start()
+            self.keyListener = KeyListener(firebase: userBackend, keystrokes: keystrokes,mouseClicks: mouseClicks, mouseMooved:mouseMoves,mouseMoovedDistance: mouseMovesDistance)
+            self.keyListener?.start()
         })
     }
     
