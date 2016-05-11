@@ -3,16 +3,12 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var window: NSWindow?
-    
-    private var loginWindow: LoginWindow? = nil
+    var loginWindowControler: LoginWindowController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        loginWindow = LoginWindow(windowNibName: "LoginWindow")
-        loginWindow?.showWindow(nil)
+        loginWindowControler = LoginWindowController()
+        loginWindowControler?.showWindow(nil)
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-    }
+    
 }
 

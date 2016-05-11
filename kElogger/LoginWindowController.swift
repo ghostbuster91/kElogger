@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-class LoginWindow: NSWindowController {
+class LoginWindowController: NSWindowController {
     
     @IBOutlet weak var githubTokenInput: NSTextField!
     @IBOutlet weak var emailInput: NSTextField!
@@ -33,15 +33,14 @@ class LoginWindow: NSWindowController {
     }
     
     override var windowNibName : String! {
-        return "LoginWindow"
+        return "LoginWindowController"
     }
     
     private let baseBackend = Firebase(url: "https://luminous-heat-7872.firebaseio.com")
     private var keyListener : KeyListener?
     
-    
     override func windowDidLoad() {
-        print("asdasd")
+        super.windowDidLoad()
     }
     
     private func loginUserWithGithub(githubToken: String){
@@ -104,5 +103,5 @@ class LoginWindow: NSWindowController {
             self.keyListener?.start()
         })
     }
-
+    
 }
