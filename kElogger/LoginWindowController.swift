@@ -48,7 +48,7 @@ class LoginWindowController: NSWindowController {
         baseBackend.authWithOAuthProvider("github", token:githubToken,
                                           withCompletionBlock: { [weak self]error, authData in
                                             if error != nil {
-                                                self?.dialogOK("error during log in", text: error.localizedDescription)
+                                                dialogOK("error during log in", text: error.localizedDescription)
                                             } else {
                                                 let githubUsername = authData.providerData["username"]
                                                 self?.onLoginSucceed(authData.uid, username: githubUsername as! String)
@@ -60,7 +60,7 @@ class LoginWindowController: NSWindowController {
         baseBackend.createUser(email, password: password,
                                withValueCompletionBlock: {[weak self] error, result in
                                 if error != nil {
-                                    self?.dialogOK("error during registering", text: error.localizedDescription)
+                                    dialogOK("error during registering", text: error.localizedDescription)
                                 } else {
                                     self?.loginUserWithPassword(email, password: password)
                                 }
@@ -71,7 +71,7 @@ class LoginWindowController: NSWindowController {
         baseBackend.authUser(email, password: password,
                              withCompletionBlock: { [weak self]error, authData in
                                 if error != nil {
-                                    self?.dialogOK("error during log in", text: error.localizedDescription)
+                                    dialogOK("error during log in", text: error.localizedDescription)
                                 } else {
                                     self?.onLoginSucceed(authData.uid, username: email)
                                 }
@@ -106,14 +106,5 @@ class LoginWindowController: NSWindowController {
             self.keyListener = KeyListener(firebase: userBackend, keystrokes: keystrokes,mouseClicks: mouseClicks, mouseMooved:mouseMoves,mouseMoovedDistance: mouseMovesDistance)
             self.keyListener?.start()
         })
-    }
-    
-    private func dialogOK(message: String, text: String) {
-        let myPopup: NSAlert = NSAlert()
-        myPopup.messageText = message
-        myPopup.informativeText = text
-        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
-        myPopup.addButtonWithTitle("OK")
-        myPopup.runModal()
     }
 }

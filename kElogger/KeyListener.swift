@@ -65,7 +65,7 @@ class KeyListener {
             [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true])
         
         if accessEnabled != true {
-            print("You need to enable the keylogger in the System Prefrences")
+            dialogOK("Permission not granted!", text: "You need to enable the keylogger in the System Prefrences")
         }
         return accessEnabled == true;
     }

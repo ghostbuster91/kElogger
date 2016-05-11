@@ -11,6 +11,7 @@
 		4EF6F0AC1CE3A1940075092B /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */; };
 		D10FDB8FA78258B4D35795EA /* Pods_kElogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F289E9B3EA8F60854DB3041F /* Pods_kElogger.framework */; };
 		E69383CF1CE38F2C00CF825B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383CE1CE38F2C00CF825B /* main.swift */; };
+		E69383D81CE3B52000CF825B /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383D71CE3B52000CF825B /* Dialog.swift */; };
 		E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */; };
 		E6AC3DDD1CDF7BC70084E6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */; };
 		E6AC3DEB1CDF7BC70084E6DF /* kEloggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3DEA1CDF7BC70084E6DF /* kEloggerTests.swift */; };
@@ -31,6 +32,7 @@
 		4EF6F0A91CE3A1940075092B /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		E69383CE1CE38F2C00CF825B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E69383D71CE3B52000CF825B /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		E6AC3DD71CDF7BC70084E6DF /* kElogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kElogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				E69383CE1CE38F2C00CF825B /* main.swift */,
 				4EF6F0A91CE3A1940075092B /* LoginWindowController.swift */,
 				4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */,
+				E69383D71CE3B52000CF825B /* Dialog.swift */,
 			);
 			path = kElogger;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */,
+				E69383D81CE3B52000CF825B /* Dialog.swift in Sources */,
 				E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */,
 				4EF6F0AB1CE3A1940075092B /* LoginWindowController.swift in Sources */,
 				E69383CF1CE38F2C00CF825B /* main.swift in Sources */,
