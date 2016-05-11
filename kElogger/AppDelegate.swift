@@ -6,9 +6,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let baseBackend = Firebase(url: "https://luminous-heat-7872.firebaseio.com")
     private var keyListener : KeyListener?
     
+    @IBOutlet weak var personTag: NSPopUpButton!
     @IBOutlet weak var githubTokenInput: NSTextField!
     @IBOutlet weak var window: NSWindow!
-    
     @IBOutlet weak var emailInput: NSTextField!
     @IBOutlet weak var passwordInput: NSSecureTextField!
     
@@ -77,7 +77,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             var mouseMovesDistance:Double = 0
             if shouldCreateUser {
                 print("creating user...")
-                let userData = ["full_name": username, "keystrokes": 0, "mouseClicks": 0, "mouseMoves": 0, "mouseMovesDistance": Double(0)]
+                let userData = ["full_name": username,
+                    "tag": self.personTag.selectedItem!.title,
+                    "keystrokes": 0,
+                    "mouseClicks": 0,
+                    "mouseMoves": 0,
+                    "mouseMovesDistance": Double(0)]
                 userBackend.setValue(userData)
             }else{
                 keystrokes = snapshot.value.objectForKey("keystrokes") as! Int!
