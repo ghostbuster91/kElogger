@@ -46,37 +46,34 @@ class LoginWindowController: NSWindowController {
     
     private func loginUserWithGithub(githubToken: String){
         baseBackend.authWithOAuthProvider("github", token:githubToken,
-                                          withCompletionBlock: { error, authData in
+                                          withCompletionBlock: { [weak self]error, authData in
                                             if error != nil {
-                                                // There was an error during log in
-                                                print("error during log in")
+                                                self?.dialogOK("error during log in", text: error.localizedDescription)
                                             } else {
                                                 let githubUsername = authData.providerData["username"]
-                                                self.onLoginSucceed(authData.uid, username: githubUsername as! String)
+                                                self?.onLoginSucceed(authData.uid, username: githubUsername as! String)
                                             }
         })
     }
     
     private func registerAndLoginUser(email: String, password: String){
         baseBackend.createUser(email, password: password,
-                               withValueCompletionBlock: { error, result in
+                               withValueCompletionBlock: {[weak self] error, result in
                                 if error != nil {
-                                    print("error during registering")
-                                    // There was an error creating the account
+                                    self?.dialogOK("error during registering", text: error.localizedDescription)
                                 } else {
-                                    self.loginUserWithPassword(email, password: password)
+                                    self?.loginUserWithPassword(email, password: password)
                                 }
         })
     }
     
     private func loginUserWithPassword(email: String, password: String){
         baseBackend.authUser(email, password: password,
-                             withCompletionBlock: { error, authData in
+                             withCompletionBlock: { [weak self]error, authData in
                                 if error != nil {
-                                    print("error during log in")
-                                    // There was an error logging in to this account
+                                    self?.dialogOK("error during log in", text: error.localizedDescription)
                                 } else {
-                                    self.onLoginSucceed(authData.uid, username: email)
+                                    self?.onLoginSucceed(authData.uid, username: email)
                                 }
         })
     }
@@ -111,4 +108,12 @@ class LoginWindowController: NSWindowController {
         })
     }
     
+    private func dialogOK(message: String, text: String) {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = message
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
+        myPopup.addButtonWithTitle("OK")
+        myPopup.runModal()
+    }
 }
