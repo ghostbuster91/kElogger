@@ -105,12 +105,12 @@ DQ
                     </textField>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U41-xc-9kB">
                         <rect key="frame" x="18" y="116" width="427" height="26"/>
-                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="MCU-sb-Zan">
+                        <popUpButtonCell key="cell" type="push" title="Developer" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="6em-De-THs" id="MCU-sb-Zan">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" id="fRR-cB-m5e">
                                 <items>
-                                    <menuItem title="Developer" id="6em-De-THs"/>
+                                    <menuItem title="Developer" state="on" id="6em-De-THs"/>
                                     <menuItem title="Support" id="X8G-IB-5eQ"/>
                                     <menuItem title="Designer" id="o8g-za-V5W"/>
                                 </items>
