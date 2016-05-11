@@ -14,10 +14,11 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="kElogger" customModuleProvider="target">
             <connections>
+                <outlet property="asdasd" destination="4tX-CK-ij9" id="6Jt-LM-h6w"/>
                 <outlet property="emailInput" destination="E66-sI-IuG" id="h87-dG-OAH"/>
                 <outlet property="githubTokenInput" destination="7gX-Tk-qRI" id="hKn-QK-Xic"/>
                 <outlet property="loginAction" destination="vLa-QJ-bhE" id="M8U-tH-hxH"/>
-                <outlet property="passwordInput" destination="4Ir-r9-ra3" id="w11-kv-PSC"/>
+                <outlet property="passwordInput" destination="4tX-CK-ij9" id="1P6-Xz-kMA"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -78,14 +79,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-r9-ra3">
-                        <rect key="frame" x="117" y="19" width="96" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="SZM-FQ-Hze">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSg-2m-fu2">
                         <rect key="frame" x="227" y="13" width="140" height="32"/>
                         <buttonCell key="cell" type="push" title="Register &amp; Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xJ1-el-mI5">
@@ -106,6 +99,17 @@ DQ
                             <action selector="loginWithEmailAction:" target="Voe-Tx-rLC" id="t7L-fp-eAW"/>
                         </connections>
                     </button>
+                    <secureTextField toolTip="Password" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4tX-CK-ij9">
+                        <rect key="frame" x="123" y="19" width="96" height="22"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="1BF-6k-ogs">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="322" y="195"/>

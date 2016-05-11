@@ -10,7 +10,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     
     @IBOutlet weak var emailInput: NSTextField!
-    @IBOutlet weak var passwordInput: NSTextField!
+    @IBOutlet weak var passwordInput: NSSecureTextField!
     
     @IBAction func helpAction(sender: AnyObject) {
         let urlString = NSURL(string: "https://github.com/settings/tokens")
