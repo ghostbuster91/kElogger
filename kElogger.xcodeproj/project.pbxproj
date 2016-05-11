@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D10FDB8FA78258B4D35795EA /* Pods_kElogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F289E9B3EA8F60854DB3041F /* Pods_kElogger.framework */; };
+		E69383CF1CE38F2C00CF825B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383CE1CE38F2C00CF825B /* main.swift */; };
+		E69383D11CE38FA000CF825B /* loginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69383D01CE38FA000CF825B /* loginWindow.xib */; };
+		E69383D31CE38FC700CF825B /* loginWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383D21CE38FC700CF825B /* loginWindow.swift */; };
 		E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */; };
 		E6AC3DDD1CDF7BC70084E6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */; };
-		E6AC3DE01CDF7BC70084E6DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AC3DDE1CDF7BC70084E6DF /* MainMenu.xib */; };
 		E6AC3DEB1CDF7BC70084E6DF /* kEloggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3DEA1CDF7BC70084E6DF /* kEloggerTests.swift */; };
 		E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3E0C1CDFB6980084E6DF /* KeyListener.swift */; };
 /* End PBXBuildFile section */
@@ -26,10 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E69383CE1CE38F2C00CF825B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E69383D01CE38FA000CF825B /* loginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginWindow.xib; sourceTree = "<group>"; };
+		E69383D21CE38FC700CF825B /* loginWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginWindow.swift; sourceTree = "<group>"; };
 		E6AC3DD71CDF7BC70084E6DF /* kElogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kElogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6AC3DDF1CDF7BC70084E6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E6AC3DE11CDF7BC70084E6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6AC3DE61CDF7BC70084E6DF /* kEloggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kEloggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AC3DEA1CDF7BC70084E6DF /* kEloggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kEloggerTests.swift; sourceTree = "<group>"; };
@@ -104,8 +108,10 @@
 				E6AC3E0C1CDFB6980084E6DF /* KeyListener.swift */,
 				E6AC3DDA1CDF7BC70084E6DF /* AppDelegate.swift */,
 				E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */,
-				E6AC3DDE1CDF7BC70084E6DF /* MainMenu.xib */,
 				E6AC3DE11CDF7BC70084E6DF /* Info.plist */,
+				E69383CE1CE38F2C00CF825B /* main.swift */,
+				E69383D01CE38FA000CF825B /* loginWindow.xib */,
+				E69383D21CE38FC700CF825B /* loginWindow.swift */,
 			);
 			path = kElogger;
 			sourceTree = "<group>";
@@ -204,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6AC3DDD1CDF7BC70084E6DF /* Assets.xcassets in Resources */,
-				E6AC3DE01CDF7BC70084E6DF /* MainMenu.xib in Resources */,
+				E69383D11CE38FA000CF825B /* loginWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +278,8 @@
 			files = (
 				E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */,
 				E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */,
+				E69383CF1CE38F2C00CF825B /* main.swift in Sources */,
+				E69383D31CE38FC700CF825B /* loginWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,17 +300,6 @@
 			targetProxy = E6AC3DE71CDF7BC70084E6DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E6AC3DDE1CDF7BC70084E6DF /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6AC3DDF1CDF7BC70084E6DF /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E6AC3DED1CDF7BC70084E6DF /* Debug */ = {
