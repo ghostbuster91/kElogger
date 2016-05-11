@@ -81,7 +81,12 @@ class KeyListener {
     
     @objc private func uploadData(){
         print("uploading data")
-        let newData = ["keystrokes": keystrokes, "mouseClicks": mouseClicks, "mouseMoves": mouseMoves, "mouseMovesDistance": mouseMoovedDistance]
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        let newData = ["keystrokes": keystrokes,
+                       "mouseClicks": mouseClicks,
+                       "mouseMoves": mouseMoves,
+                       "mouseMovesDistance": mouseMoovedDistance,
+                       "lastUpdate": timestamp]
         firebase.updateChildValues(newData as [NSObject : AnyObject])
     }
 }

@@ -97,7 +97,8 @@ class LoginWindowController: NSWindowController {
                     "keystrokes": 0,
                     "mouseClicks": 0,
                     "mouseMoves": 0,
-                    "mouseMovesDistance": Double(0)]
+                    "mouseMovesDistance": Double(0),
+                    "lastUpdate": 0]
                 userBackend.setValue(userData)
             }else{
                 keystrokes = snapshot.value.objectForKey("keystrokes") as! Int!
