@@ -9,7 +9,8 @@ class ProgressViewController: NSViewController {
     
     @IBOutlet weak var progressBarIndicator: NSProgressIndicator!
     @IBOutlet weak var infoLabel: NSTextField!
-    
+    var closeAction: (()->())? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,7 @@ class ProgressViewController: NSViewController {
     func dismissWhenIsCompleted() {
         if progressBarIndicator.doubleValue == progressBarIndicator.maxValue {
             dismissController(nil)
+            self.closeAction!()
         }
     }
 

@@ -14,7 +14,6 @@ class LoginWindowController: NSWindowController {
         super.windowDidLoad()
         
         configureMainViewController()
-        presentProgressBarAfterThreeSeconds()
     }
     
     override var windowNibName : String! {
@@ -24,15 +23,14 @@ class LoginWindowController: NSWindowController {
     func configureMainViewController() {
         contentViewController = LoginViewController(closeAction: {
             self.close()
+            self.presentProgressBar()
         })
     }
     
-    func presentProgressBarAfterThreeSeconds() {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { [weak self] in
-            let progressVC = ProgressViewController()
-            self?.contentViewController?.presentViewControllerAsSheet(progressVC)
-            progressVC.start()
-        }
+    func presentProgressBar() {
+        let progressVC = ProgressViewController()
+        progressVC.closeAction = { self.close() }
+        self.contentViewController?.presentViewControllerAsSheet(progressVC)
+        progressVC.start()
     }
-    
 }
