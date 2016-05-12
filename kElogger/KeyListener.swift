@@ -56,7 +56,7 @@ class KeyListener {
         mouseMoveMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(
             [.MouseMovedMask], handler: {[weak self] (event: NSEvent) in
                 self?.mouseMoves += 1
-                self?.mouseMoovedDistance += Double(sqrt(pow(Double(event.deltaX), 2) + pow(Double(event.deltaY),2)))
+                self?.mouseMoovedDistance += Double(sqrt(pow(Double(event.deltaX), 2) + pow(Double(event.deltaY),2))) / 1000
         })
     }
     
