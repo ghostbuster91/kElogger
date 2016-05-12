@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E1327C1CE3E9D500CF5E80 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1327A1CE3E9D500CF5E80 /* ProgressViewController.swift */; };
+		07E1327D1CE3E9D500CF5E80 /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E1327B1CE3E9D500CF5E80 /* ProgressViewController.xib */; };
 		07E132811CE3EEC600CF5E80 /* NSProgressIndicator+ESSProgressIndicatorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E1327F1CE3EEC600CF5E80 /* NSProgressIndicator+ESSProgressIndicatorCategory.m */; };
+		07E132931CE403B500CF5E80 /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E132921CE403B500CF5E80 /* LoginWindowController.xib */; };
+		07E132961CE4053000CF5E80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E132941CE4053000CF5E80 /* LoginViewController.swift */; };
+		07E132971CE4053000CF5E80 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E132951CE4053000CF5E80 /* LoginViewController.xib */; };
 		4EF6F0AB1CE3A1940075092B /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6F0A91CE3A1940075092B /* LoginWindowController.swift */; };
-		4EF6F0AC1CE3A1940075092B /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */; };
 		D10FDB8FA78258B4D35795EA /* Pods_kElogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F289E9B3EA8F60854DB3041F /* Pods_kElogger.framework */; };
 		E69383CF1CE38F2C00CF825B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383CE1CE38F2C00CF825B /* main.swift */; };
 		E69383D81CE3B52000CF825B /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383D71CE3B52000CF825B /* Dialog.swift */; };
@@ -30,10 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07E1327A1CE3E9D500CF5E80 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		07E1327B1CE3E9D500CF5E80 /* ProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
 		07E1327F1CE3EEC600CF5E80 /* NSProgressIndicator+ESSProgressIndicatorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSProgressIndicator+ESSProgressIndicatorCategory.m"; sourceTree = "<group>"; };
 		07E132801CE3EEC600CF5E80 /* NSProgressIndicator+ESSProgressIndicatorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSProgressIndicator+ESSProgressIndicatorCategory.h"; sourceTree = "<group>"; };
+		07E132921CE403B500CF5E80 /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
+		07E132941CE4053000CF5E80 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07E132951CE4053000CF5E80 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4EF6F0A91CE3A1940075092B /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
-		4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 		E69383CE1CE38F2C00CF825B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E69383D71CE3B52000CF825B /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		E6AC3DD71CDF7BC70084E6DF /* kElogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kElogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,9 +133,13 @@
 				E6AC3DDC1CDF7BC70084E6DF /* Assets.xcassets */,
 				E6AC3DE11CDF7BC70084E6DF /* Info.plist */,
 				E69383CE1CE38F2C00CF825B /* main.swift */,
+				07E132921CE403B500CF5E80 /* LoginWindowController.xib */,
 				4EF6F0A91CE3A1940075092B /* LoginWindowController.swift */,
-				4EF6F0AA1CE3A1940075092B /* LoginWindowController.xib */,
 				E69383D71CE3B52000CF825B /* Dialog.swift */,
+				07E1327A1CE3E9D500CF5E80 /* ProgressViewController.swift */,
+				07E1327B1CE3E9D500CF5E80 /* ProgressViewController.xib */,
+				07E132941CE4053000CF5E80 /* LoginViewController.swift */,
+				07E132951CE4053000CF5E80 /* LoginViewController.xib */,
 			);
 			path = kElogger;
 			sourceTree = "<group>";
@@ -225,8 +237,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF6F0AC1CE3A1940075092B /* LoginWindowController.xib in Resources */,
+				07E132971CE4053000CF5E80 /* LoginViewController.xib in Resources */,
 				E6AC3DDD1CDF7BC70084E6DF /* Assets.xcassets in Resources */,
+				07E1327D1CE3E9D500CF5E80 /* ProgressViewController.xib in Resources */,
+				07E132931CE403B500CF5E80 /* LoginWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E132961CE4053000CF5E80 /* LoginViewController.swift in Sources */,
 				07E132811CE3EEC600CF5E80 /* NSProgressIndicator+ESSProgressIndicatorCategory.m in Sources */,
 				E6AC3DDB1CDF7BC70084E6DF /* AppDelegate.swift in Sources */,
 				E69383D81CE3B52000CF825B /* Dialog.swift in Sources */,
 				E6AC3E0D1CDFB6980084E6DF /* KeyListener.swift in Sources */,
+				07E1327C1CE3E9D500CF5E80 /* ProgressViewController.swift in Sources */,
 				4EF6F0AB1CE3A1940075092B /* LoginWindowController.swift in Sources */,
 				E69383CF1CE38F2C00CF825B /* main.swift in Sources */,
 			);
